@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhangra Beats Hoodie - Punjab Drip</title>
+    <meta name="description" content="Streetwear hoodie with Bhangra-inspired patterns. Modern Punjabi fashion celebrating heritage through contemporary streetwear.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="product.js" defer></script>
+    <style>
+        /* Product detail layout */
+        .product-detail {
+            padding: 40px 0;
+        }
+        
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .product-images {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        /* Size selection area */
+        .size-selection {
+            margin-bottom: 20px;
+        }
+        
+        .size-btn {
+            padding: 8px 15px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .size-btn.active {
+            border-color: #FF9933;
+            color: #FF9933;
+        }
+        
+        /* Button styles */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            width: 100%;
+        }
+        
+        .add-to-cart-btn {
+            flex: 1;
+            background-color: #FF9933;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        
+        .add-to-wishlist-btn {
+            flex: 1;
+            background-color: white;
+            color: #333;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        
+        .add-to-cart-btn:hover {
+            background-color: #e88a2a;
+        }
+        
+        .add-to-wishlist-btn:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* Thumbnails */
+        .image-thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .thumbnail.active {
+            border-color: #FF9933;
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header content here -->
+    
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="collections.html?category=streetwear">Streetwear</a></li>
+                <li>Bhangra Beats Hoodie</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-grid">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="images/bhangra-beats-hoodie-main.jpg" alt="Bhangra Beats Hoodie" id="main-product-image">
+                    </div>
+                    <div class="image-thumbnails">
+                        <div class="thumbnail active" data-image="images/bhangra-beats-hoodie-main.jpg">
+                            <img src="images/bhangra-beats-hoodie-thumb-1.jpg" alt="Bhangra Beats Hoodie - Front">
+                        </div>
+                        <div class="thumbnail" data-image="images/bhangra-beats-hoodie-back.jpg">
+                            <img src="images/bhangra-beats-hoodie-thumb-2.jpg" alt="Bhangra Beats Hoodie - Back">
+                        </div>
+                        <div class="thumbnail" data-image="images/bhangra-beats-hoodie-detail.jpg">
+                            <img src="images/bhangra-beats-hoodie-thumb-3.jpg" alt="Bhangra Beats Hoodie - Detail">
+                        </div>
+                        <div class="thumbnail" data-image="images/bhangra-beats-hoodie-model.jpg">
+                            <img src="images/bhangra-beats-hoodie-thumb-4.jpg" alt="Bhangra Beats Hoodie - On Model">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1>Bhangra Beats Hoodie</h1>
+                    <div class="product-price">$59.99</div>
+                    
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="review-count">(12 reviews)</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <p>Make a statement with our Bhangra Beats Hoodie, where traditional Punjabi dance rhythms meet modern streetwear. This premium hoodie features authentic Bhangra-inspired patterns with a contemporary twist.</p>
+                        <p>Crafted from soft, durable cotton blend fabric for maximum comfort, this hoodie is perfect for everyday wear while celebrating your cultural heritage.</p>
+                        <ul>
+                            <li>80% cotton, 20% polyester blend</li>
+                            <li>Vibrant Bhangra-inspired pattern</li>
+                            <li>Kangaroo pocket</li>
+                            <li>Ribbed cuffs and waistband</li>
+                            <li>Machine washable</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-options">
+                        <!-- Size Selection -->
+                        <div class="option-group">
+                            <label>Size:</label>
+                            <div class="option-buttons size-options">
+                                <button class="option-btn" data-size="S">S</button>
+                                <button class="option-btn active" data-size="M">M</button>
+                                <button class="option-btn" data-size="L">L</button>
+                                <button class="option-btn" data-size="XL">XL</button>
+                                <button class="option-btn" data-size="XXL">XXL</button>
+                            </div>
+                            <a href="#" class="size-guide">Size Guide</a>
+                        </div>
+                        
+                        <!-- Color Selection -->
+                        <div class="option-group">
+                            <label>Color:</label>
+                            <div class="option-buttons color-options">
+                                <button class="option-btn color-btn active" data-color="Black" style="background-color: #000;"></button>
+                                <button class="option-btn color-btn" data-color="Orange" style="background-color: #FF9933;"></button>
+                                <button class="option-btn color-btn" data-color="Green" style="background-color: #138808;"></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Quantity Selection -->
+                        <div class="option-group quantity-selector">
+                            <label>Quantity:</label>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn decrease">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons - Properly positioned and styled -->
+                    <div class="action-buttons">
+                        <button class="add-to-cart-btn">ADD TO CART</button>
+                        <button class="add-to-wishlist-btn">ADD TO WISHLIST</button>
+                    </div>
+                    
+                    <!-- Product Meta -->
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">SKU:</span>
+                            <span class="meta-value">PD-BBH-001</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Category:</span>
+                            <span class="meta-value"><a href="collections.html?category=streetwear">Streetwear</a></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Tags:</span>
+                            <span class="meta-value">
+                                <a href="shop.html?tag=hoodie">Hoodie</a>, 
+                                <a href="shop.html?tag=bhangra">Bhangra</a>, 
+                                <a href="shop.html?tag=punjabi">Punjabi</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Additional sections like tabs, related products, etc. -->
+    
+    <script>
+        // JavaScript for product interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Thumbnail switching
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.getElementById('main-product-image');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    const imageUrl = this.getAttribute('data-image');
+                    mainImage.src = imageUrl;
+                });
+            });
+            
+            // Size selection
+            const sizeButtons = document.querySelectorAll('.size-options .option-btn');
+            sizeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    sizeButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Color selection
+            const colorButtons = document.querySelectorAll('.color-options .option-btn');
+            colorButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    colorButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Quantity controls
+            const decreaseBtn = document.querySelector('.quantity-btn.decrease');
+            const increaseBtn = document.querySelector('.quantity-btn.increase');
+            const quantityInput = document.querySelector('.quantity-input');
+            
+            decreaseBtn.addEventListener('click', function() {
+                let value = parseInt(quantityInput.value);
+                if (value > 1) {
+                    quantityInput.value = value - 1;
+                }
+            });
+            
+            increaseBtn.addEventListener('click', function() {
+                let value = parseInt(quantityInput.value);
+                if (value < 10) {
+                    quantityInput.value = value + 1;
+                }
+            });
+        });
+    </script>
+    <!-- Newsletter Section -->
+    <section class="newsletter" style="background-color: #5271FF; color: white; text-align: center; padding: 50px 20px;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Join Our Community</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1rem;">
+                Subscribe to our newsletter for the latest drops, exclusive offers, and cultural insights behind our designs.
+            </p>
+            <form class="newsletter-form" style="display: flex; justify-content: center; max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Your email address" style="flex-grow: 1; padding: 12px; border: none; border-radius: 4px 0 0 4px;">
+                <button type="submit" style="background-color: #FF9933; color: white; border: none; padding: 12px 24px; border-radius: 0 4px 4px 0; cursor: pointer;">
+                    SUBSCRIBE
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; padding: 50px 0 20px;">
+        <div class="container" style="display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <!-- Punjab Drip Column -->
+            <div style="flex: 1; margin-right: 30px;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Punjab Drip</h3>
+                <p style="line-height: 1.6; margin-bottom: 15px;">
+                    Modern Punjabi fashion celebrating heritage through contemporary streetwear and traditional attire with authentic cultural influences.
+                </p>
+                <div class="social-icons" style="display: flex; gap: 10px;">
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">FB</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">IG</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TW</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TK</a>
+                </div>
+            </div>
+
+            <!-- Shop Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Shop</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">New Arrivals</a></li>
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">Best Sellers</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Streetwear</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Traditional</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Help</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="contact.html" style="color: white; text-decoration: none;">Customer Service</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Size Guide</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Shipping Info</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Returns & Exchanges</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Contact Us</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">Email: info@punjabdrip.com</li>
+                    <li style="margin-bottom: 10px;">Phone: +1 (123) 456-7890</li>
+                    <li style="margin-bottom: 10px;">Address: Canada</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="text-align: center; padding-top: 30px; border-top: 1px solid #444; margin-top: 30px;">
+            <p style="color: #888;">© 2025 Punjab Drip. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

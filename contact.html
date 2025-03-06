@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Punjab Drip</title>
+    <meta name="description" content="Get in touch with Punjab Drip for inquiries, customer service, and collaboration opportunities.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Punjab <span>Drip</span>
+                </div>
+                <div class="menu-icon">&#9776;</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" id="search-icon">&#128269;</a>
+                    <a href="account.html">&#128100;</a>
+                    <a href="cart.html">&#128722;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Search Bar (Hidden by default) -->
+        <div class="search-container" id="search-container">
+            <div class="container">
+                <form action="search-results.html" method="get" class="search-form">
+                    <input type="text" name="query" placeholder="Search for products..." required>
+                    <button type="submit" class="btn">Search</button>
+                    <span class="close-search" id="close-search">&times;</span>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Banner -->
+    <section class="contact-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you! Get in touch with our team.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@punjabdrip.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+1 (123) 456-7890</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p>123 Fashion Avenue<br>Toronto, ON M5V 2K6<br>Canada</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>Monday-Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-media">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" target="_blank">Facebook</a>
+                            <a href="#" target="_blank">Instagram</a>
+                            <a href="#" target="_blank">Twitter</a>
+                            <a href="#" target="_blank">TikTok</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Embedded Map -->
+                    <div class="contact-map">
+                        <!-- In a real implementation, this would be replaced with an actual Google Maps embed -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.2885132873275!2d-79.39858492426648!3d43.64888715260082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d68bf33a9b%3A0x15edd8c16de1975c!2sCN%20Tower!5e0!3m2!1sen!2sca!4v1709850838410!5m2!1sen!2sca" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="customer-service">Customer Service</option>
+                                <option value="order-inquiry">Order Inquiry</option>
+                                <option value="product-question">Product Question</option>
+                                <option value="returns">Returns & Exchanges</option>
+                                <option value="collaboration">Collaboration Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" checked>
+                                <span>Subscribe to our newsletter for updates and special offers</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">What payment methods do you accept?</div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, and Google Pay. All payments are securely processed.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is your shipping policy?</div>
+                    <div class="faq-answer">
+                        <p>We offer free standard shipping on all orders over $50 within Canada and over $100 for international orders. Standard shipping typically takes 3-5 business days for domestic orders and 7-14 business days for international orders.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is your return policy?</div>
+                    <div class="faq-answer">
+                        <p>We accept returns within 30 days of delivery for items in their original, unworn condition with tags attached. Return shipping costs are the responsibility of the customer unless the item is defective.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do I track my order?</div>
+                    <div class="faq-answer">
+                        <p>Once your order ships, you'll receive a confirmation email with tracking information. You can also track your order by logging into your account on our website or contacting our customer service team.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Do you ship internationally?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we ship worldwide! International shipping rates vary by destination and will be calculated at checkout.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How can I collaborate with Punjab Drip?</div>
+                    <div class="faq-answer">
+                        <p>We're always open to collaborations with artists, designers, and organizations that align with our values. Please contact us with details about your collaboration idea using the form above or email us at collaborations@punjabdrip.com.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-more">
+                <p>Have more questions? Check out our <a href="faq.html">complete FAQ page</a> or contact us directly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" style="background-color: #5271FF; color: white; text-align: center; padding: 50px 20px;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Join Our Community</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1rem;">
+                Subscribe to our newsletter for the latest drops, exclusive offers, and cultural insights behind our designs.
+            </p>
+            <form class="newsletter-form" style="display: flex; justify-content: center; max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Your email address" style="flex-grow: 1; padding: 12px; border: none; border-radius: 4px 0 0 4px;">
+                <button type="submit" style="background-color: #FF9933; color: white; border: none; padding: 12px 24px; border-radius: 0 4px 4px 0; cursor: pointer;">
+                    SUBSCRIBE
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; padding: 50px 0 20px;">
+        <div class="container" style="display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <!-- Punjab Drip Column -->
+            <div style="flex: 1; margin-right: 30px;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Punjab Drip</h3>
+                <p style="line-height: 1.6; margin-bottom: 15px;">
+                    Modern Punjabi fashion celebrating heritage through contemporary streetwear and traditional attire with authentic cultural influences.
+                </p>
+                <div class="social-icons" style="display: flex; gap: 10px;">
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">FB</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">IG</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TW</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TK</a>
+                </div>
+            </div>
+
+            <!-- Shop Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Shop</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">New Arrivals</a></li>
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">Best Sellers</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Streetwear</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Traditional</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Help</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="contact.html" style="color: white; text-decoration: none;">Customer Service</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Size Guide</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Shipping Info</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Returns & Exchanges</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Contact Us</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">Email: info@punjabdrip.com</li>
+                    <li style="margin-bottom: 10px;">Phone: +1 (123) 456-7890</li>
+                    <li style="margin-bottom: 10px;">Address: Canada</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="text-align: center; padding-top: 30px; border-top: 1px solid #444; margin-top: 30px;">
+            <p style="color: #888;">© 2025 Punjab Drip. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    // Toggle active class for current item
+                    item.classList.toggle('active');
+                    
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Contact Form Submission
+            const contactForm = document.getElementById('contactForm');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // In a real implementation, this would send the form data to a server
+                    alert('Thanks for your message! We\'ll get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

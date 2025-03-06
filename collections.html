@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - Punjab Drip</title>
+    <meta name="description" content="Explore our curated collections of modern Punjabi fashion, including streetwear, traditional attire, and accessories.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Punjab <span>Drip</span>
+                </div>
+                <div class="menu-icon">&#9776;</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" id="search-icon">&#128269;</a>
+                    <a href="account.html">&#128100;</a>
+                    <a href="cart.html">&#128722;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Search Bar (Hidden by default) -->
+        <div class="search-container" id="search-container">
+            <div class="container">
+                <form action="search-results.html" method="get" class="search-form">
+                    <input type="text" name="query" placeholder="Search for products..." required>
+                    <button type="submit" class="btn">Search</button>
+                    <span class="close-search" id="close-search">&times;</span>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Collections Banner -->
+    <section class="collections-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Our Collections</h1>
+                <p>Explore our curated collections that blend Punjabi heritage with modern streetwear</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Categories -->
+    <section class="collection-categories">
+        <div class="container">
+            <div class="categories-grid">
+                <!-- Category 1: Streetwear -->
+                <div class="category-card large">
+                    <img src="images/streetwear-collection.jpg" alt="Streetwear Collection">
+                    <div class="category-info">
+                        <h2>Streetwear</h2>
+                        <p>Modern urban styles with Punjabi influences</p>
+                        <a href="shop.html?category=streetwear" class="btn">Shop Collection</a>
+                    </div>
+                </div>
+                
+                <!-- Category 2: Traditional -->
+                <div class="category-card large">
+                    <img src="images/traditional-collection.jpg" alt="Traditional Collection">
+                    <div class="category-info">
+                        <h2>Traditional</h2>
+                        <p>Contemporary takes on classic Punjabi attire</p>
+                        <a href="shop.html?category=traditional" class="btn">Shop Collection</a>
+                    </div>
+                </div>
+                
+                <!-- Category 3: Accessories -->
+                <div class="category-card">
+                    <img src="images/accessories-collection.jpg" alt="Accessories Collection">
+                    <div class="category-info">
+                        <h2>Accessories</h2>
+                        <p>Complete your look with our heritage-inspired accessories</p>
+                        <a href="shop.html?category=accessories" class="btn">Shop Collection</a>
+                    </div>
+                </div>
+                
+                <!-- Category 4: New Arrivals -->
+                <div class="category-card">
+                    <img src="images/new-arrivals-collection.jpg" alt="New Arrivals Collection">
+                    <div class="category-info">
+                        <h2>New Arrivals</h2>
+                        <p>The latest additions to our Punjabi Drip family</p>
+                        <a href="shop.html?category=new-arrivals" class="btn">Shop Collection</a>
+                    </div>
+                </div>
+                
+                <!-- Category 5: Best Sellers -->
+                <div class="category-card">
+                    <img src="images/best-sellers-collection.jpg" alt="Best Sellers Collection">
+                    <div class="category-info">
+                        <h2>Best Sellers</h2>
+                        <p>Our most popular and loved items</p>
+                        <a href="shop.html?category=best-sellers" class="btn">Shop Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section class="featured-collection">
+        <div class="container">
+            <h2 class="section-title">Featured Collection: Phulkari</h2>
+            <p class="section-description">Our Phulkari collection is inspired by the traditional embroidery art form of Punjab. Each piece incorporates authentic Phulkari patterns reimagined for modern fashion.</p>
+            
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/phulkari-tee.jpg" alt="Phulkari Graphic Tee">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-phulkari-tee.html">Phulkari Graphic Tee</a></h3>
+                        <span class="price">$35.99</span>
+                        <a href="#" class="btn add-to-cart" data-id="1">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/phulkari-hoodie.jpg" alt="Phulkari Hoodie">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-phulkari-hoodie.html">Phulkari Hoodie</a></h3>
+                        <span class="price">$64.99</span>
+                        <a href="#" class="btn add-to-cart" data-id="7">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/phulkari-cap.jpg" alt="Phulkari Cap">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-phulkari-cap.html">Phulkari Cap</a></h3>
+                        <span class="price">$27.99</span>
+                        <a href="#" class="btn add-to-cart" data-id="8">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/phulkari-tote.jpg" alt="Phulkari Tote Bag">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-phulkari-tote.html">Phulkari Tote Bag</a></h3>
+                        <span class="price">$29.99</span>
+                        <a href="#" class="btn add-to-cart" data-id="9">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-link">
+                <a href="shop.html?collection=phulkari" class="btn btn-outline">View All Phulkari Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Story -->
+    <section class="collection-story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image">
+                    <img src="images/collection-story.jpg" alt="The Story Behind Our Collections">
+                </div>
+                <div class="story-content">
+                    <h2>The Story Behind Our Collections</h2>
+                    <p>At Punjab Drip, each collection is a thoughtful blend of Punjabi heritage and contemporary fashion. Our design team researches traditional textile patterns, cultural motifs, and historical garments to create pieces that honor the rich cultural legacy of Punjab.</p>
+                    <p>We work with artisans and cultural experts to ensure our interpretations are authentic while also appealing to modern fashion sensibilities. Our goal is to create clothing that helps the younger generation connect with their cultural roots in a way that feels relevant to their lives today.</p>
+                    <p>From the vibrant colors of Phulkari embroidery to the rhythmic energy of Bhangra dance, each collection tells a story of cultural pride and artistic expression that transcends generations.</p>
+                    <a href="about.html" class="btn">Learn More About Our Process</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Collections -->
+    <section class="upcoming-collections">
+        <div class="container">
+            <h2 class="section-title">Coming Soon</h2>
+            <div class="coming-soon-banner">
+                <img src="images/coming-soon-collection.jpg" alt="Upcoming Pind to City Collection">
+                <div class="coming-soon-content">
+                    <h3>Pind to City Collection</h3>
+                    <p>A celebration of the journey from rural Punjab to urban life. Launching Summer 2025.</p>
+                    <a href="#" class="btn btn-outline">Get Notified</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" style="background-color: #5271FF; color: white; text-align: center; padding: 50px 20px;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Join Our Community</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1rem;">
+                Subscribe to our newsletter for the latest drops, exclusive offers, and cultural insights behind our designs.
+            </p>
+            <form class="newsletter-form" style="display: flex; justify-content: center; max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Your email address" style="flex-grow: 1; padding: 12px; border: none; border-radius: 4px 0 0 4px;">
+                <button type="submit" style="background-color: #FF9933; color: white; border: none; padding: 12px 24px; border-radius: 0 4px 4px 0; cursor: pointer;">
+                    SUBSCRIBE
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; padding: 50px 0 20px;">
+        <div class="container" style="display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <!-- Punjab Drip Column -->
+            <div style="flex: 1; margin-right: 30px;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Punjab Drip</h3>
+                <p style="line-height: 1.6; margin-bottom: 15px;">
+                    Modern Punjabi fashion celebrating heritage through contemporary streetwear and traditional attire with authentic cultural influences.
+                </p>
+                <div class="social-icons" style="display: flex; gap: 10px;">
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">FB</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">IG</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TW</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TK</a>
+                </div>
+            </div>
+
+            <!-- Shop Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Shop</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">New Arrivals</a></li>
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">Best Sellers</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Streetwear</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Traditional</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Help</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="contact.html" style="color: white; text-decoration: none;">Customer Service</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Size Guide</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Shipping Info</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Returns & Exchanges</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Contact Us</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">Email: info@punjabdrip.com</li>
+                    <li style="margin-bottom: 10px;">Phone: +1 (123) 456-7890</li>
+                    <li style="margin-bottom: 10px;">Address: Canada</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="text-align: center; padding-top: 30px; border-top: 1px solid #444; margin-top: 30px;">
+            <p style="color: #888;">© 2025 Punjab Drip. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

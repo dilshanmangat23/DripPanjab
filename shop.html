@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Punjab Drip</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <style>
+        /* Base styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Header styles */
+        header {
+            background-color: white;
+            color: black;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo span {
+            color: #5271FF;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-icons a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .search-container {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-form input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-form button {
+            padding: 8px;
+            background-color: #5271FF;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* Shop banner - CENTERED */
+        .shop-banner {
+            background-color: #f9f9f9;
+            color: black;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .shop-banner h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .shop-banner p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Improved Filter Sidebar */
+        .shop-content {
+            display: flex;
+            margin: 30px 0;
+        }
+
+        .shop-sidebar {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-right: 25px;
+            min-width: 250px;
+        }
+
+        .shop-sidebar h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .filter-section {
+            margin-bottom: 20px;
+        }
+
+        .filter-section h4 {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .filter-section select,
+        .filter-section input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #f5f8ff;
+            font-size: 14px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .filter-section select:focus,
+        .filter-section input:focus {
+            outline: none;
+            border-color: #5271FF;
+            box-shadow: 0 0 0 2px rgba(82, 113, 255, 0.2);
+        }
+
+        .price-inputs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .price-inputs input {
+            width: calc(50% - 5px);
+        }
+
+        .btn {
+            background-color: #5271FF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #3e5cd6;
+        }
+
+        /* Shop products */
+        .shop-products {
+            flex: 3;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-info h3 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            color: #FF9933;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        /* HIDE cart notification */
+        .cart-notification {
+            display: none !important;
+        }
+
+        /* Newsletter section */
+        .newsletter {
+            background-color: #5271FF;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex-grow: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .newsletter-form button {
+            background-color: #FF9933;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin-right: 30px;
+        }
+
+        .footer-column h3 {
+            color: #FF9933;
+            margin-bottom: 15px;
+        }
+
+        .footer-column p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            margin-top: 30px;
+            color: #888;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .shop-content {
+                flex-direction: column;
+            }
+            
+            .shop-sidebar {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-column {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Punjab <span>Drip</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" id="search-icon">&#128269;</a>
+                    <a href="account.html">&#128100;</a>
+                    <a href="cart.html">&#128722;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Search Bar (Hidden by default) -->
+        <div class="search-container" id="search-container">
+            <div class="container">
+                <form action="search-results.html" method="get" class="search-form">
+                    <input type="text" name="query" placeholder="Search for products..." required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Center-aligned shop banner -->
+    <section class="shop-banner">
+        <h1>Shop All Products</h1>
+        <p>Discover our unique collection of Punjabi-inspired fashion and streetwear</p>
+    </section>
+
+    <section class="shop-content container">
+        <div class="shop-sidebar">
+            <h3>Filters</h3>
+            <div class="filter-section">
+                <h4>Product Types</h4>
+                <select name="category" id="category">
+                    <option value="all" selected>All Products</option>
+                    <option value="tshirts">T-Shirts</option>
+                    <option value="hoodies">Hoodies</option>
+                    <option value="jackets">Jackets</option>
+                    <option value="accessories">Accessories</option>
+                </select>
+            </div>
+            <div class="filter-section">
+                <h4>Price Range</h4>
+                <div class="price-inputs">
+                    <input type="number" id="min-price" placeholder="Min $">
+                    <input type="number" id="max-price" placeholder="Max $">
+                </div>
+            </div>
+            <div class="filter-section">
+                <h4>Size</h4>
+                <select name="size" id="size">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="filter-section">
+                <h4>Color</h4>
+                <select name="color" id="color">
+                    <option value="black">Black</option>
+                    <option value="orange">Orange</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                </select>
+            </div>
+            <div class="filter-section">
+                <h4>Brand</h4>
+                <select name="brand" id="brand">
+                    <option value="all" selected>All Brands</option>
+                    <option value="punjab-drip">Punjab Drip</option>
+                    <option value="other-brand">Other Brand</option>
+                </select>
+            </div>
+            <div class="filter-section">
+                <h4>Material</h4>
+                <select name="material" id="material">
+                    <option value="cotton">Cotton</option>
+                    <option value="polyester">Polyester</option>
+                    <option value="blend">Blend</option>
+                </select>
+            </div>
+            <div class="filter-section">
+                <h4>Ratings</h4>
+                <select name="ratings" id="ratings">
+                    <option value="all" selected>All Ratings</option>
+                    <option value="4stars">4 Stars & Up</option>
+                    <option value="3stars">3 Stars & Up</option>
+                </select>
+            </div>
+            <button class="btn" id="apply-filters">Apply Filters</button>
+        </div>
+
+        <div class="shop-products">
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/phulkari-tee.jpg" alt="Phulkari Graphic Tee">
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-phulkari-tee.html">Phulkari Graphic Tee</a></h3>
+                        <span class="price">$35.99</span>
+                        <a href="#" class="btn add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/bhangra-beats-hoodie-main.jpg" alt="Bhangra Beats Hoodie">
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-bhangra-hoodie.html">Bhangra Beats Hoodie</a></h3>
+                        <span class="price">$59.99</span>
+                        <a href="#" class="btn add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/punjabi-jacket.jpg" alt="Modern Punjabi Jacket">
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-punjabi-jacket.html">Modern Punjabi Jacket</a></h3>
+                        <span class="price">$79.99</span>
+                        <a href="#" class="btn add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/heritage-snapback.jpg" alt="Heritage Snapback">
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-heritage-snapback.html">Heritage Snapback</a></h3>
+                        <span class="price">$29.99</span>
+                        <a href="#" class="btn add-to-cart">Add to Cart</a>
+                    </div>
+                </div>
+                <!-- More products would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>
+                Subscribe to our newsletter for the latest drops, exclusive offers, and cultural insights behind our designs.
+            </p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address">
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Punjab Drip Column -->
+            <div class="footer-column">
+                <h3>Punjab Drip</h3>
+                <p>
+                    Modern Punjabi fashion celebrating heritage through contemporary streetwear and traditional attire with authentic cultural influences.
+                </p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">IG</a>
+                    <a href="#" class="social-icon">TW</a>
+                    <a href="#" class="social-icon">TK</a>
+                </div>
+            </div>
+            <!-- Shop Column -->
+            <div class="footer-column">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="shop.html">New Arrivals</a></li>
+                    <li><a href="shop.html">Best Sellers</a></li>
+                    <li><a href="collections.html">Streetwear</a></li>
+                    <li><a href="collections.html">Traditional</a></li>
+                    <li><a href="collections.html">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Column -->
+            <div class="footer-column">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="contact.html">Customer Service</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: info@punjabdrip.com</li>
+                    <li>Phone: +1 (123) 456-7890</li>
+                    <li>Address: Canada</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>© 2025 Punjab Drip. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchIcon = document.getElementById('search-icon');
+            const searchContainer = document.getElementById('search-container');
+            
+            searchIcon.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (searchContainer.style.display === 'none') {
+                    searchContainer.style.display = 'block';
+                } else {
+                    searchContainer.style.display = 'none';
+                }
+            });
+            
+            // Filter functionality
+            const applyFiltersBtn = document.getElementById('apply-filters');
+            
+            applyFiltersBtn.addEventListener('click', function() {
+                // Collect all filter values
+                const filters = {
+                    category: document.getElementById('category').value,
+                    minPrice: document.getElementById('min-price').value,
+                    maxPrice: document.getElementById('max-price').value,
+                    size: document.getElementById('size').value,
+                    color: document.getElementById('color').value,
+                    brand: document.getElementById('brand').value,
+                    material: document.getElementById('material').value,
+                    ratings: document.getElementById('ratings').value
+                };
+                
+                console.log('Applied filters:', filters);
+                
+                // Here you would implement the actual filtering logic
+                // No alerts shown to the user since we're hiding notifications
+            });
+            
+            // Add to cart - disable notifications
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Add to cart logic here
+                    // No notification is shown due to our CSS
+                });
+            });
+        });
+    </script>
+</body>
+</html>

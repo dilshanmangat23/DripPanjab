@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streetline Heritage  - Where Heritage Meets Street </title>
+    <meta name="description" content="Streetline Heritage offers modern  fashion celebrating heritage through contemporary streetwear and traditional attire with authentic cultural influences.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="account-management.js" defer></script>
+<style>
+    .hero {
+    background-image:url("images/Street.jpg") ; 
+    
+    background-size: cover;
+    align: margin-left
+    background-position: left  ;
+    background-repeat: no-repeat;
+    background-color: #f5f5f5; /* Consistent light gray background */
+    position: relative;
+    /* Keep your existing styles for padding, etc. */
+}
+
+.hero-content {
+    margin-left: 45%; /* Move text to the right of the lion */
+    max-width: 55%; /* Ensure text doesn't stretch too far */
+    text-align: left; /* Left align for better readability */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Add subtle shadow for better contrast */
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    background-color: rgba(255,255,255,0.5); /* Semi-transparent background */
+    padding: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.hero .btn {
+    margin-right: 10px;
+    padding: 12px 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Streetline <span> Heritage</span>
+                </div>
+                <div class="menu-icon">&#9776;</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" id="search-icon">&#128269;</a>
+                    <a href="account.html">&#128100;</a>
+                    <a href="cart.html">&#128722;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Search Bar (Hidden by default) -->
+        <div class="search-container" id="search-container">
+            <div class="container">
+                <form action="search-results.html" method="get" class="search-form">
+                    <input type="text" name="query" placeholder="Search for products..." required>
+                    <button type="submit" class="btn">Search</button>
+                    <span class="close-search" id="close-search">&times;</span>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Modern Punjabi Fashion for the Bold</h1>
+                <p>Celebrating Punjabi heritage through contemporary fashion with authentic cultural influences and modern streetwear.</p>
+                <a href="shop.html" class="btn">Shop Now</a>
+                <a href="collections.html" class="btn btn-outline">View Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="shop">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="featured-products">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/phulkari-tee.jpg" alt="Punjabi-inspired T-shirt">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-phulkari-tee.html">Phulkari Graphic Tee</a></h3>
+                        <p>Modern tee with traditional Phulkari inspired design.</p>
+                        <span class="price">$35.99</span>
+                        <a href="#" class="btn add-to-cart" data-id="1">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/bhangra-beats-hoodie-main.jpg" alt="Designer Hoodie">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-bhangra-hoodie.html">Bhangra Beats Hoodie</a></h3>
+                        <p>Streetwear hoodie with Bhangra-inspired patterns.</p>
+                        <span class="price">$59.99</span>
+                        <a href="#" class="btn add-to-cart" data-id="2">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/punjabi-jacket.jpg" alt="Traditional Jacket">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-punjabi-jacket.html">Modern Punjabi Jacket</a></h3>
+                        <p>Contemporary jacket with traditional embroidery details.</p>
+                        <span class="price">$79.99</span>
+                        <a href="#" class="btn add-to-cart" data-id="3">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/heritage-snapback.jpg" alt="Punjabi Cap">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-heritage-snapback.html">Heritage Snapback</a></h3>
+                        <p>Modern cap with authentic Punjabi textile patterns.</p>
+                        <span class="price">$29.99</span>
+                        <a href="#" class="btn add-to-cart" data-id="4">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section id="collections">
+        <div class="container">
+            <h2 class="section-title">Our Collections</h2>
+            <div class="categories">
+                <!-- Category 1 -->
+                <div class="category-card">
+                    <img src="images/streetwear-collection.jpg" alt="Streetwear Collection">
+                    <div class="category-info">
+                        <h3>Streetwear</h3>
+                        <a href="collections.html?category=streetwear" class="btn">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="category-card">
+                    <img src="images/traditional-collection.jpg" alt="Traditional Collection">
+                    <div class="category-info">
+                        <h3>Traditional</h3>
+                        <a href="collections.html?category=traditional" class="btn">Shop Now</a>
+                    </div>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="category-card">
+                    <img src="images/accessories-collection.jpg" alt="Accessories Collection">
+                    <div class="category-info">
+                        <h3>Accessories</h3>
+                        <a href="collections.html?category=accessories" class="btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/about-mission.jpg" alt="About Punjab Drip">
+                </div>
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>StreetLine Heritage is a vibrant online clothing shop celebrating Punjabi heritage through contemporary fashion. We offer a carefully curated collection of modern streetwear and traditional attire with authentic Punjabi influences.</p>
+                    <p>Our designs blend cultural elements with current trends, providing unique and stylish options for those who appreciate the rich textile traditions of Punjab. From statement graphic tees to modern interpretations of traditional attire, each piece tells a story of cultural pride and modern expression.</p>
+                    <a href="about.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" style="background-color: #5271FF; color: white; text-align: center; padding: 50px 20px;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Join Our Community</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1rem;">
+                Subscribe to our newsletter for the latest drops, exclusive offers, and cultural insights behind our designs.
+            </p>
+            <form class="newsletter-form" style="display: flex; justify-content: center; max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Your email address" style="flex-grow: 1; padding: 12px; border: none; border-radius: 4px 0 0 4px;">
+                <button type="submit" style="background-color: #FF9933; color: white; border: none; padding: 12px 24px; border-radius: 0 4px 4px 0; cursor: pointer;">
+                    SUBSCRIBE
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; padding: 50px 0 20px;">
+        <div class="container" style="display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <!-- Punjab Drip Column -->
+            <div style="flex: 1; margin-right: 30px;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Punjab Drip</h3>
+                <p style="line-height: 1.6; margin-bottom: 15px;">
+                    Modern Punjabi fashion celebrating heritage through contemporary streetwear and traditional attire with authentic cultural influences.
+                </p>
+                <div class="social-icons" style="display: flex; gap: 10px;">
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">FB</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">IG</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TW</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TK</a>
+                </div>
+            </div>
+
+            <!-- Shop Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Shop</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">New Arrivals</a></li>
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">Best Sellers</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Streetwear</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Traditional</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Help</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="contact.html" style="color: white; text-decoration: none;">Customer Service</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Size Guide</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Shipping Info</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Returns & Exchanges</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Contact Us</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">Email: info@punjabdrip.com</li>
+                    <li style="margin-bottom: 10px;">Phone: +1 (123) 456-7890</li>
+                    <li style="margin-bottom: 10px;">Address: Canada</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="text-align: center; padding-top: 30px; border-top: 1px solid #444; margin-top: 30px;">
+            <p style="color: #888;">© 2025 Streetline Heritage Drip. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhangra Beats Hoodie - Punjab Drip</title>
+    <meta name="description" content="Streetwear hoodie with Bhangra-inspired patterns. Modern Punjabi fashion celebrating heritage through contemporary streetwear.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="product.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Punjab <span>Drip</span>
+                </div>
+                <div class="menu-icon">&#9776;</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" id="search-icon">&#128269;</a>
+                    <a href="account.html">&#128100;</a>
+                    <a href="cart.html">&#128722;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Search Bar (Hidden by default) -->
+        <div class="search-container" id="search-container">
+            <div class="container">
+                <form action="search-results.html" method="get" class="search-form">
+                    <input type="text" name="query" placeholder="Search for products..." required>
+                    <button type="submit" class="btn">Search</button>
+                    <span class="close-search" id="close-search">&times;</span>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="collections.html?category=streetwear">Streetwear</a></li>
+                <li>Bhangra Beats Hoodie</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-grid">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="images/bhangra-beats-hoodie-main.jpg" alt="Bhangra Beats Hoodie" id="main-product-image">
+                    </div>
+                    <div class="image-thumbnails">
+                        <div class="thumbnail active" data-image="images/bhangra-beats-hoodie-main.jpg">
+                            <img src="images/bhangra-beats-hoodie-thumb-1.jpg" alt="Bhangra Beats Hoodie - Front">
+                        </div>
+                        <div class="thumbnail" data-image="images/bhangra-beats-hoodie-back.jpg">
+                            <img src="images/bhangra-beats-hoodie-thumb-2.jpg" alt="Bhangra Beats Hoodie - Back">
+                        </div>
+                        <div class="thumbnail" data-image="images/bhangra-beats-hoodie-detail.jpg">
+                            <img src="images/bhangra-beats-hoodie-thumb-3.jpg" alt="Bhangra Beats Hoodie - Detail">
+                        </div>
+                        <div class="thumbnail" data-image="images/bhangra-beats-hoodie-model.jpg">
+                            <img src="images/bhangra-beats-hoodie-thumb-4.jpg" alt="Bhangra Beats Hoodie - On Model">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h1>Bhangra Beats Hoodie</h1>
+                    <div class="product-price">$59.99</div>
+                    
+                    <div class="product-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="review-count">(12 reviews)</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <p>Make a statement with our Bhangra Beats Hoodie, where traditional Punjabi dance rhythms meet modern streetwear. This premium hoodie features authentic Bhangra-inspired patterns with a contemporary twist.</p>
+                        <p>Crafted from soft, durable cotton blend fabric for maximum comfort, this hoodie is perfect for everyday wear while celebrating your cultural heritage.</p>
+                        <ul>
+                            <li>80% cotton, 20% polyester blend</li>
+                            <li>Vibrant Bhangra-inspired pattern</li>
+                            <li>Kangaroo pocket</li>
+                            <li>Ribbed cuffs and waistband</li>
+                            <li>Machine washable</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-options">
+                        <!-- Size Selection -->
+                        <div class="option-group">
+                            <label>Size:</label>
+                            <div class="option-buttons size-options">
+                                <button class="option-btn" data-size="S">S</button>
+                                <button class="option-btn active" data-size="M">M</button>
+                                <button class="option-btn" data-size="L">L</button>
+                                <button class="option-btn" data-size="XL">XL</button>
+                                <button class="option-btn" data-size="XXL">XXL</button>
+                            </div>
+                            <a href="#" class="size-guide">Size Guide</a>
+                        </div>
+                        
+                        <!-- Color Selection -->
+                        <div class="option-group">
+                            <label>Color:</label>
+                            <div class="option-buttons color-options">
+                                <button class="option-btn color-btn active" data-color="Black" style="background-color: #000;"></button>
+                                <button class="option-btn color-btn" data-color="Orange" style="background-color: #FF9933;"></button>
+                                <button class="option-btn color-btn" data-color="Green" style="background-color: #138808;"></button>
+                            </div>
+                        </div>
+                        
+                        <!-- Quantity Selection -->
+                        <div class="option-group quantity-selector">
+                            <label>Quantity:</label>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn decrease">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add to Cart -->
+                    <div class="product-actions">
+                        <button class="btn add-to-cart-btn">Add to Cart</button>
+                        <button class="btn wishlist-btn">Add to Wishlist</button>
+                    </div>
+                    
+                    <!-- Product Meta -->
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">SKU:</span>
+                            <span class="meta-value">PD-BBH-001</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Category:</span>
+                            <span class="meta-value"><a href="collections.html?category=streetwear">Streetwear</a></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Tags:</span>
+                            <span class="meta-value">
+                                <a href="shop.html?tag=hoodie">Hoodie</a>, 
+                                <a href="shop.html?tag=bhangra">Bhangra</a>, 
+                                <a href="shop.html?tag=punjabi">Punjabi</a>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Sharing -->
+                    <div class="social-sharing">
+                        <span>Share:</span>
+                        <a href="#" class="social-share-btn">FB</a>
+                        <a href="#" class="social-share-btn">IG</a>
+                        <a href="#" class="social-share-btn">TW</a>
+                        <a href="#" class="social-share-btn">PT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Product Tabs -->
+    <section class="product-tabs">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="description">Description</button>
+                <button class="tab-btn" data-tab="details">Additional Information</button>
+                <button class="tab-btn" data-tab="reviews">Reviews (12)</button>
+                <button class="tab-btn" data-tab="shipping">Shipping & Returns</button>
+            </div>
+            
+            <div class="tab-content">
+                <!-- Description Tab -->
+                <div class="tab-pane active" id="description">
+                    <h3>Product Description</h3>
+                    <p>The Bhangra Beats Hoodie is a celebration of Punjabi culture and dance. The design draws inspiration from traditional Bhangra dance movements and the vibrant energy of Punjabi music.</p>
+                    <p>Our designers have studied authentic textile patterns from Punjab and reinterpreted them for modern streetwear. The result is a unique hoodie that stands at the intersection of cultural heritage and contemporary fashion.</p>
+                    <p>The hoodie features:</p>
+                    <ul>
+                        <li>Bhangra-inspired patterns across the chest and sleeves</li>
+                        <li>Premium cotton-polyester blend that's both comfortable and durable</li>
+                        <li>Double-lined hood with matching drawstrings</li>
+                        <li>Spacious kangaroo pocket</li>
+                        <li>Ribbed cuffs and hem for a secure fit</li>
+                    </ul>
+                    <p>Perfect for casual outings, cultural events, or just showing your Punjabi pride on campus or around town.</p>
+                </div>
+                
+                <!-- Additional Information Tab -->
+                <div class="tab-pane" id="details">
+                    <h3>Additional Information</h3>
+                    <table class="info-table">
+                        <tr>
+                            <th>Material</th>
+                            <td>80% Cotton, 20% Polyester</td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td>400 gsm</td>
+                        </tr>
+                        <tr>
+                            <th>Sizes</th>
+                            <td>S, M, L, XL, XXL</td>
+                        </tr>
+                        <tr>
+                            <th>Colors</th>
+                            <td>Black, Orange, Green</td>
+                        </tr>
+                        <tr>
+                            <th>Care Instructions</th>
+                            <td>Machine wash cold with like colors. Tumble dry low. Do not iron print.</td>
+                        </tr>
+                        <tr>
+                            <th>Country of Origin</th>
+                            <td>Made in Canada</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Reviews Tab -->
+                <div class="tab-pane" id="reviews">
+                    <h3>Customer Reviews</h3>
+                    <div class="review-summary">
+                        <div class="average-rating">
+                            <span class="rating-value">4.8</span>
+                            <div class="stars">★★★★★</div>
+                            <span class="review-count">Based on 12 reviews</span>
+                        </div>
+                        <div class="rating-breakdown">
+                            <div class="rating-bar">
+                                <span class="rating-level">5 Stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 80%;"></div>
+                                </div>
+                                <span class="count">10</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-level">4 Stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 16%;"></div>
+                                </div>
+                                <span class="count">2</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-level">3 Stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%;"></div>
+                                </div>
+                                <span class="count">0</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-level">2 Stars</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%;"></div>
+                                </div>
+                                <span class="count">0</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-level">1 Star</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%;"></div>
+                                </div>
+                                <span class="count">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Individual Reviews -->
+                    <div class="review-list">
+                        <!-- Sample Review 1 -->
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer">
+                                    <div class="reviewer-name">Manpreet S.</div>
+                                    <div class="review-date">February 10, 2025</div>
+                                </div>
+                                <div class="review-rating">★★★★★</div>
+                            </div>
+                            <div class="review-content">
+                                <h4>Amazing quality and design!</h4>
+                                <p>I'm extremely impressed with the quality of this hoodie. The Bhangra-inspired patterns are beautiful and detailed. The fabric is soft yet durable, and it's kept me warm through Canadian winters. Definitely recommend!</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Sample Review 2 -->
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer">
+                                    <div class="reviewer-name">Jasleen K.</div>
+                                    <div class="review-date">January 25, 2025</div>
+                                </div>
+                                <div class="review-rating">★★★★★</div>
+                            </div>
+                            <div class="review-content">
+                                <h4>Represents our culture beautifully</h4>
+                                <p>Love how this hoodie incorporates traditional Punjabi elements into modern streetwear. I've gotten so many compliments when wearing it around campus. Sizing is perfect too - I ordered my usual size M and it fits great.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Review Form -->
+                        <div class="review-form-wrapper">
+                            <h3>Write a Review</h3>
+                            <form class="review-form">
+                                <div class="form-group">
+                                    <label>Your Rating</label>
+                                    <div class="rating-select">
+                                        <span class="rating-star" data-rating="1">★</span>
+                                        <span class="rating-star" data-rating="2">★</span>
+                                        <span class="rating-star" data-rating="3">★</span>
+                                        <span class="rating-star" data-rating="4">★</span>
+                                        <span class="rating-star" data-rating="5">★</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-title">Review Title</label>
+                                    <input type="text" id="review-title" name="review_title" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-content">Your Review</label>
+                                    <textarea id="review-content" name="review_content" rows="5" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reviewer-name">Your Name</label>
+                                    <input type="text" id="reviewer-name" name="reviewer_name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reviewer-email">Your Email</label>
+                                    <input type="email" id="reviewer-email" name="reviewer_email" required>
+                                    <p class="form-note">Your email will not be published</p>
+                                </div>
+                                
+                                <button type="submit" class="btn">Submit Review</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shipping & Returns Tab -->
+                <div class="tab-pane" id="shipping">
+                    <h3>Shipping & Returns</h3>
+                    <div class="shipping-info">
+                        <h4>Shipping</h4>
+                        <ul>
+                            <li><strong>Canada:</strong> Free shipping on orders over $50</li>
+                            <li><strong>USA:</strong> Free shipping on orders over $100</li>
+                            <li><strong>International:</strong> Flat rate of $25</li>
+                        </ul>
+                        <p>Standard delivery times:</p>
+                        <ul>
+                            <li>Canada: 3-5 business days</li>
+                            <li>USA: 5-7 business days</li>
+                            <li>International: 10-14 business days</li>
+                        </ul>
+                        <p>Expedited shipping options available at checkout.</p>
+                        
+                        <h4>Returns</h4>
+                        <p>We want you to be completely satisfied with your purchase. If you're not happy with your order, we accept returns within 30 days of delivery.</p>
+                        <p><strong>Return Policy:</strong></p>
+                        <ul>
+                            <li>Items must be in original, unworn condition with tags attached</li>
+                            <li>Original packaging must be included</li>
+                            <li>Customized items cannot be returned unless defective</li>
+                            <li>Customer is responsible for return shipping costs</li>
+                        </ul>
+                        <p>To initiate a return, please email <a href="mailto:returns@punjabdrip.com">returns@punjabdrip.com</a> with your order number and reason for return.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">You May Also Like</h2>
+            <div class="product-grid">
+                <!-- Related Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/phulkari-tee.jpg" alt="Phulkari Graphic Tee">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-phulkari-tee.html">Phulkari Graphic Tee</a></h3>
+                        <div class="product-price">$35.99</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(8)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/punjabi-jacket.jpg" alt="Modern Punjabi Jacket">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-punjabi-jacket.html">Modern Punjabi Jacket</a></h3>
+                        <div class="product-price">$79.99</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(6)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/heritage-snapback.jpg" alt="Heritage Snapback">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-heritage-snapback.html">Heritage Snapback</a></h3>
+                        <div class="product-price">$29.99</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="review-count">(4)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Related Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/punjabi-tote.jpg" alt="Punjabi Pattern Tote">
+                        <div class="product-actions">
+                            <a href="#" class="quick-view">Quick View</a>
+                            <a href="#" class="add-to-wishlist">♥</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product-punjabi-tote.html">Punjabi Pattern Tote</a></h3>
+                        <div class="product-price">$24.99</div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="review-count">(7)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recently Viewed -->
+    <section class="recently-viewed">
+        <div class="container">
+            <h2 class="section-title">Recently Viewed</h2>
+            <div class="product-slider">
+                <!-- Product items would be dynamically inserted here based on browsing history -->
+                <p class="empty-message">No recently viewed items</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" style="background-color: #5271FF; color: white; text-align: center; padding: 50px 20px;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Join Our Community</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1rem;">
+                Subscribe to our newsletter for the latest drops, exclusive offers, and cultural insights behind our designs.
+            </p>
+            <form class="newsletter-form" style="display: flex; justify-content: center; max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Your email address" style="flex-grow: 1; padding: 12px; border: none; border-radius: 4px 0 0 4px;">
+                <button type="submit" style="background-color: #FF9933; color: white; border: none; padding: 12px 24px; border-radius: 0 4px 4px 0; cursor: pointer;">
+                    SUBSCRIBE
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; padding: 50px 0 20px;">
+        <div class="container" style="display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <!-- Punjab Drip Column -->
+            <div style="flex: 1; margin-right: 30px;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Punjab Drip</h3>
+                <p style="line-height: 1.6; margin-bottom: 15px;">
+                    Modern Punjabi fashion celebrating heritage through contemporary streetwear and traditional attire with authentic cultural influences.
+                </p>
+                <div class="social-icons" style="display: flex; gap: 10px;">
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">FB</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">IG</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TW</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TK</a>
+                </div>
+            </div>
+
+            <!-- Shop Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Shop</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">New Arrivals</a></li>
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">Best Sellers</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Streetwear</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Traditional</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Help</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="contact.html" style="color: white; text-decoration: none;">Customer Service</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Size Guide</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Shipping Info</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Returns & Exchanges</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Contact Us</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">Email: info@punjabdrip.com</li>
+                    <li style="margin-bottom: 10px;">Phone: +1 (123) 456-7890</li>
+                    <li style="margin-bottom: 10px;">Address: Canada</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="text-align: center; padding-top: 30px; border-top: 1px solid #444; margin-top: 30px;">
+            <p style="color: #888;">© 2025 Punjab Drip. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

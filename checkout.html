@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Punjab Drip</title>
+    <meta name="description" content="Complete your purchase of Punjabi-inspired fashion at Punjab Drip.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="cart.js" defer></script>
+    <script src="checkout.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Punjab <span>Drip</span>
+                </div>
+                <div class="menu-icon">&#9776;</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" id="search-icon">&#128269;</a>
+                    <a href="account.html">&#128100;</a>
+                    <a href="cart.html">&#128722;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Search Bar (Hidden by default) -->
+        <div class="search-container" id="search-container">
+            <div class="container">
+                <form action="search-results.html" method="get" class="search-form">
+                    <input type="text" name="query" placeholder="Search for products..." required>
+                    <button type="submit" class="btn">Search</button>
+                    <span class="close-search" id="close-search">&times;</span>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li>Checkout</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <h1 class="page-title">Checkout</h1>
+            
+            <!-- Checkout Progress -->
+            <div class="checkout-progress">
+                <div class="progress-step completed">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Shopping Cart</div>
+                </div>
+                <div class="progress-bar"></div>
+                <div class="progress-step active">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Checkout Details</div>
+                </div>
+                <div class="progress-bar"></div>
+                <div class="progress-step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Order Complete</div>
+                </div>
+            </div>
+            
+            <div class="checkout-grid">
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <h2>Shipping Information</h2>
+                    <form id="checkoutForm">
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name*</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name*</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Street Address*</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="apartment">Apartment, suite, etc. (optional)</label>
+                            <input type="text" id="apartment" name="apartment">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City*</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="province">Province/State*</label>
+                                <input type="text" id="province" name="province" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="postalCode">Postal/ZIP Code*</label>
+                                <input type="text" id="postalCode" name="postalCode" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country*</label>
+                                <select id="country" name="country" required>
+                                    <option value="Canada">Canada</option>
+                                    <option value="United States">United States</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="India">India</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number*</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="sameAsBilling" name="sameAsBilling" checked>
+                                <span>Billing address same as shipping</span>
+                            </label>
+                        </div>
+                        
+                        <!-- Billing Information (Hidden by default) -->
+                        <div id="billingInfoSection" style="display: none;">
+                            <h2>Billing Information</h2>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="billingFirstName">First Name*</label>
+                                    <input type="text" id="billingFirstName" name="billingFirstName">
+                                </div>
+                                <div class="form-group">
+                                    <label for="billingLastName">Last Name*</label>
+                                    <input type="text" id="billingLastName" name="billingLastName">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="billingAddress">Street Address*</label>
+                                <input type="text" id="billingAddress" name="billingAddress">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="billingApartment">Apartment, suite, etc. (optional)</label>
+                                <input type="text" id="billingApartment" name="billingApartment">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="billingCity">City*</label>
+                                    <input type="text" id="billingCity" name="billingCity">
+                                </div>
+                                <div class="form-group">
+                                    <label for="billingProvince">Province/State*</label>
+                                    <input type="text" id="billingProvince" name="billingProvince">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="billingPostalCode">Postal/ZIP Code*</label>
+                                    <input type="text" id="billingPostalCode" name="billingPostalCode">
+                                </div>
+                                <div class="form-group">
+                                    <label for="billingCountry">Country*</label>
+                                    <select id="billingCountry" name="billingCountry">
+                                        <option value="Canada">Canada</option>
+                                        <option value="United States">United States</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="India">India</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Shipping Method</h2>
+                        <div class="shipping-methods">
+                            <div class="shipping-method">
+                                <label class="radio-label">
+                                    <input type="radio" name="shipping" value="standard" checked>
+                                    <div class="shipping-details">
+                                        <span class="shipping-name">Standard Shipping</span>
+                                        <span class="shipping-price">Free</span>
+                                        <span class="shipping-time">3-5 business days</span>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="shipping-method">
+                                <label class="radio-label">
+                                    <input type="radio" name="shipping" value="express">
+                                    <div class="shipping-details">
+                                        <span class="shipping-name">Express Shipping</span>
+                                        <span class="shipping-price">$12.99</span>
+                                        <span class="shipping-time">1-2 business days</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <h2>Payment Method</h2>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <label class="radio-label">
+                                    <input type="radio" name="payment" value="credit-card" checked>
+                                    <span>Credit Card</span>
+                                </label>
+                                
+                                <div class="payment-details" id="credit-card-details">
+                                    <div class="form-group">
+                                        <label for="cardNumber">Card Number*</label>
+                                        <input type="text" id="cardNumber" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="cardName">Name on Card*</label>
+                                        <input type="text" id="cardName" name="cardName" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiryDate">Expiry Date*</label>
+                                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv">CVV*</label>
+                                            <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-method">
+                                <label class="radio-label">
+                                    <input type="radio" name="payment" value="paypal">
+                                    <span>PayPal</span>
+                                </label>
+                                
+                                <div class="payment-details" id="paypal-details" style="display: none;">
+                                    <p>You will be redirected to PayPal to complete your payment.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-method">
+                                <label class="radio-label">
+                                    <input type="radio" name="payment" value="apple-pay">
+                                    <span>Apple Pay</span>
+                                </label>
+                                
+                                <div class="payment-details" id="apple-pay-details" style="display: none;">
+                                    <p>You will be redirected to Apple Pay to complete your payment.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="terms" required>
+                                <span>I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>.</span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="checkout-summary">
+                    <h3>Order Summary</h3>
+                    
+                    <div class="checkout-items" id="checkout-items">
+                        <!-- Items will be dynamically loaded from cart -->
+                    </div>
+                    
+                    <div class="checkout-totals">
+                        <div class="checkout-row">
+                            <span>Subtotal</span>
+                            <span id="checkout-subtotal">$0.00</span>
+                        </div>
+                        <div class="checkout-row">
+                            <span>Shipping</span>
+                            <span id="checkout-shipping">Free</span>
+                        </div>
+                        <div class="checkout-row">
+                            <span>Tax (10%)</span>
+                            <span id="checkout-tax">$0.00</span>
+                        </div>
+                        <div class="checkout-row total">
+                            <span>Total</span>
+                            <span id="checkout-total">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="discount-code">
+                        <input type="text" id="discountCode" placeholder="Discount code">
+                        <button class="btn btn-apply">Apply</button>
+                    </div>
+                    
+                    <button type="submit" class="btn place-order-btn" form="checkoutForm">Place Order</button>
+                    
+                    <div class="secure-checkout">
+                        <div class="secure-icon">🔒</div>
+                        <div class="secure-text">Secure checkout - 100% Protected</div>
+                    </div>
+                    
+                    <div class="accepted-payment">
+                        <span>We Accept:</span>
+                        <div class="payment-icons">
+                            <span>VISA</span>
+                            <span>MC</span>
+                            <span>AMEX</span>
+                            <span>PayPal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" style="background-color: #5271FF; color: white; text-align: center; padding: 50px 20px;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Join Our Community</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1rem;">
+                Subscribe to our newsletter for the latest drops, exclusive offers, and cultural insights behind our designs.
+            </p>
+            <form class="newsletter-form" style="display: flex; justify-content: center; max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Your email address" style="flex-grow: 1; padding: 12px; border: none; border-radius: 4px 0 0 4px;">
+                <button type="submit" style="background-color: #FF9933; color: white; border: none; padding: 12px 24px; border-radius: 0 4px 4px 0; cursor: pointer;">
+                    SUBSCRIBE
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; padding: 50px 0 20px;">
+        <div class="container" style="display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <!-- Punjab Drip Column -->
+            <div style="flex: 1; margin-right: 30px;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Punjab Drip</h3>
+                <p style="line-height: 1.6; margin-bottom: 15px;">
+                    Modern Punjabi fashion celebrating heritage through contemporary streetwear and traditional attire with authentic cultural influences.
+                </p>
+                <div class="social-icons" style="display: flex; gap: 10px;">
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">FB</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">IG</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TW</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TK</a>
+                </div>
+            </div>
+
+            <!-- Shop Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Shop</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">New Arrivals</a></li>
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">Best Sellers</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Streetwear</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Traditional</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Help</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="contact.html" style="color: white; text-decoration: none;">Customer Service</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Size Guide</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Shipping Info</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Returns & Exchanges</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Contact Us</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">Email: info@punjabdrip.com</li>
+                    <li style="margin-bottom: 10px;">Phone: +1 (123) 456-7890</li>
+                    <li style="margin-bottom: 10px;">Address: Canada</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="text-align: center; padding-top: 30px; border-top: 1px solid #444; margin-top: 30px;">
+            <p style="color: #888;">© 2025 Punjab Drip. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Punjab Drip</title>
+    <meta name="description" content="Thank you for your order at Punjab Drip. Your order has been confirmed.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="order-confirmation.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Punjab <span>Drip</span>
+                </div>
+                <div class="menu-icon">&#9776;</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" id="search-icon">&#128269;</a>
+                    <a href="account.html">&#128100;</a>
+                    <a href="cart.html">&#128722;</a>
+                </div>
+            </div>
+        </div>
+        <!-- Search Bar (Hidden by default) -->
+        <div class="search-container" id="search-container">
+            <div class="container">
+                <form action="search-results.html" method="get" class="search-form">
+                    <input type="text" name="query" placeholder="Search for products..." required>
+                    <button type="submit" class="btn">Search</button>
+                    <span class="close-search" id="close-search">&times;</span>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Order Confirmation Section -->
+    <section class="confirmation-section">
+        <div class="container">
+            <div class="confirmation-header">
+                <div class="confirmation-icon">✓</div>
+                <h1>Thank You for Your Order!</h1>
+                <p>Your order has been received and is being processed.</p>
+            </div>
+            
+            <div class="order-details">
+                <div class="order-info">
+                    <h2>Order Information</h2>
+                    <div class="order-info-grid">
+                        <div class="order-info-item">
+                            <span class="label">Order Number:</span>
+                            <span class="value" id="order-number">--</span>
+                        </div>
+                        <div class="order-info-item">
+                            <span class="label">Order Date:</span>
+                            <span class="value" id="order-date">--</span>
+                        </div>
+                        <div class="order-info-item">
+                            <span class="label">Payment Method:</span>
+                            <span class="value" id="payment-method">--</span>
+                        </div>
+                        <div class="order-info-item">
+                            <span class="label">Shipping Method:</span>
+                            <span class="value" id="shipping-method">--</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-addresses">
+                    <div class="shipping-address">
+                        <h3>Shipping Address</h3>
+                        <div id="shipping-address-details">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="billing-address">
+                        <h3>Billing Address</h3>
+                        <div id="billing-address-details">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="order-items" id="order-items">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="order-totals">
+                        <div class="order-row">
+                            <span>Subtotal</span>
+                            <span id="order-subtotal">$0.00</span>
+                        </div>
+                        <div class="order-row">
+                            <span>Shipping</span>
+                            <span id="order-shipping">Free</span>
+                        </div>
+                        <div class="order-row" id="discount-row" style="display: none;">
+                            <span id="discount-label">Discount</span>
+                            <span id="order-discount">-$0.00</span>
+                        </div>
+                        <div class="order-row">
+                            <span>Tax (10%)</span>
+                            <span id="order-tax">$0.00</span>
+                        </div>
+                        <div class="order-row total">
+                            <span>Total</span>
+                            <span id="order-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-status">
+                    <h2>Order Status</h2>
+                    <div class="status-timeline">
+                        <div class="status-step completed">
+                            <div class="status-icon">✓</div>
+                            <div class="status-info">
+                                <h4>Order Placed</h4>
+                                <p id="order-placed-date">--</p>
+                            </div>
+                        </div>
+                        <div class="status-connector"></div>
+                        <div class="status-step active">
+                            <div class="status-icon">⋯</div>
+                            <div class="status-info">
+                                <h4>Processing</h4>
+                                <p>Your order is being processed</p>
+                            </div>
+                        </div>
+                        <div class="status-connector"></div>
+                        <div class="status-step">
+                            <div class="status-icon">📦</div>
+                            <div class="status-info">
+                                <h4>Shipped</h4>
+                                <p>Estimated: 3-5 business days</p>
+                            </div>
+                        </div>
+                        <div class="status-connector"></div>
+                        <div class="status-step">
+                            <div class="status-icon">🏠</div>
+                            <div class="status-info">
+                                <h4>Delivered</h4>
+                                <p>Pending</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="confirmation-actions">
+                    <a href="shop.html" class="btn btn-outline">Continue Shopping</a>
+                    <a href="contact.html" class="btn">Contact Support</a>
+                </div>
+                
+                <div class="order-note">
+                    <p>A confirmation email has been sent to <span id="customer-email">--</span> with all order details.</p>
+                    <p>If you have any questions about your order, please contact our customer service team.</p>
+                </div>
+            </div>
+            
+            <div class="recommended-products">
+                <h2>You Might Also Like</h2>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/phulkari-tee.jpg" alt="Phulkari Graphic Tee">
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product-phulkari-tee.html">Phulkari Graphic Tee</a></h3>
+                            <span class="price">$35.99</span>
+                            <a href="#" class="btn add-to-cart" data-id="1">Add to Cart</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/heritage-snapback.jpg" alt="Heritage Snapback">
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product-heritage-snapback.html">Heritage Snapback</a></h3>
+                            <span class="price">$29.99</span>
+                            <a href="#" class="btn add-to-cart" data-id="4">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" style="background-color: #5271FF; color: white; text-align: center; padding: 50px 20px;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 15px;">Join Our Community</h2>
+            <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1rem;">
+                Subscribe to our newsletter for the latest drops, exclusive offers, and cultural insights behind our designs.
+            </p>
+            <form class="newsletter-form" style="display: flex; justify-content: center; max-width: 500px; margin: 0 auto;">
+                <input type="email" placeholder="Your email address" style="flex-grow: 1; padding: 12px; border: none; border-radius: 4px 0 0 4px;">
+                <button type="submit" style="background-color: #FF9933; color: white; border: none; padding: 12px 24px; border-radius: 0 4px 4px 0; cursor: pointer;">
+                    SUBSCRIBE
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; color: white; padding: 50px 0 20px;">
+        <div class="container" style="display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <!-- Punjab Drip Column -->
+            <div style="flex: 1; margin-right: 30px;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Punjab Drip</h3>
+                <p style="line-height: 1.6; margin-bottom: 15px;">
+                    Modern Punjabi fashion celebrating heritage through contemporary streetwear and traditional attire with authentic cultural influences.
+                </p>
+                <div class="social-icons" style="display: flex; gap: 10px;">
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">FB</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">IG</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TW</a>
+                    <a href="#" style="width: 35px; height: 35px; background-color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: black;">TK</a>
+                </div>
+            </div>
+
+            <!-- Shop Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Shop</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">New Arrivals</a></li>
+                    <li style="margin-bottom: 10px;"><a href="shop.html" style="color: white; text-decoration: none;">Best Sellers</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Streetwear</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Traditional</a></li>
+                    <li style="margin-bottom: 10px;"><a href="collections.html" style="color: white; text-decoration: none;">Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Help</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="contact.html" style="color: white; text-decoration: none;">Customer Service</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Size Guide</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Shipping Info</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">Returns & Exchanges</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: white; text-decoration: none;">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div style="flex: 1;">
+                <h3 style="color: #FF9933; margin-bottom: 15px;">Contact Us</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;">Email: info@punjabdrip.com</li>
+                    <li style="margin-bottom: 10px;">Phone: +1 (123) 456-7890</li>
+                    <li style="margin-bottom: 10px;">Address: Canada</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div style="text-align: center; padding-top: 30px; border-top: 1px solid #444; margin-top: 30px;">
+            <p style="color: #888;">© 2025 Punjab Drip. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <style>
+        /* Order Confirmation Styles */
+        .confirmation-section {
+            padding: 60px 0;
+        }
+        
+        .confirmation-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .confirmation-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 20px;
+        }
+        
+        .confirmation-header h1 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+        
+        .order-details {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .order-info {
+            margin-bottom: 30px;
+        }
+        
+        .order-info h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .order-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .order-info-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .order-info-item .label {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        
+        .order-info-item .value {
+            font-size: 1.1rem;
+        }
+        
+        .order-addresses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--light);
+        }
+        
+        .order-addresses h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .order-summary {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--light);
+        }
+        
+        .order-summary h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .order-items {
+            margin-bottom: 20px;
+        }
+        
+        .order-item {
+            display: flex;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light);
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .order-item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .order-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .order-item-details {
+            flex: 1;
+        }
+        
+        .order-item-details h4 {
+            margin-bottom: 5px;
+        }
+        
+        .order-item-details p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .order-item-price {
+            display: flex;
+            align-items: flex-start;
+            margin-left: 15px;
+        }
+        
+        .order-item-quantity {
+            text-align: right;
+            margin-left: 15px;
+            color: #666;
+        }
+        
+        .order-totals {
+            margin-top: 20px;
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .order-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .order-row.total {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .status-timeline {
+            display: flex;
+            margin: 30px 0;
+        }
+        
+        .status-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 150px;
+        }
+        
+        .status-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .status-step.completed .status-icon {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .status-step.active .status-icon {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .status-connector {
+            flex: 1;
+            height: 2px;
+            background-color: #ddd;
+            margin-top: 20px;
+        }
+        
+        .status-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .status-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .confirmation-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .order-note {
+            text-align: center;
+            color: #666;
+            margin-top: 30px;
+        }
+        
+        .recommended-products {
+            margin-top: 60px;
+        }
+        
+        .recommended-products h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .order-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-addresses {
+                grid-template-columns: 1fr;
+            }
+            
+            .status-timeline {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .status-step {
+                flex-direction: row;
+                width: 100%;
+                margin-bottom: 20px;
+                text-align: left;
+            }
+            
+            .status-icon {
+                margin-right: 15px;
+                margin-bottom: 0;
+            }
+            
+            .status-connector {
+                width: 2px;
+                height: 20px;
+                margin-left: 20px;
+                margin-top: 0;
+            }
+            
+            .confirmation-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>

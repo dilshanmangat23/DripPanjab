@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Punjab Drip</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="account-management.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Punjab <span>Drip</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <!-- Login Box -->
+                <div class="auth-box">
+                    <h2>Login to Punjab Drip</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn">Login</button>
+                        <p id="loginError" style="color: red; display: none;">Invalid email or password</p>
+                    </form>
+
+                    <div class="auth-divider">
+                        <span>OR</span>
+                    </div>
+
+                    <div class="social-auth">
+                        <a href="#" class="social-auth-btn">Login with Google</a>
+                        <a href="#" class="social-auth-btn">Login with Facebook</a>
+                    </div>
+
+                    <div class="auth-footer">
+                        <p>Don't have an account? <a href="register.html">Register here</a></p>
+                        <p><a href="#">Forgot Password?</a></p>
+                    </div>
+                </div>
+
+                <!-- Welcome Side -->
+                <div class="auth-box welcome-section">
+                    <h2>Welcome Back!</h2>
+                    <p>Log in to access your personalized Punjab Drip experience. Manage your orders, update your profile, and stay connected with the latest styles.</p>
+                    <img src="images/login-illustration.jpg" alt="Punjab Drip Login">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Subscribe to our newsletter for the latest drops, exclusive offers, and cultural insights behind our designs.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address">
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Punjab Drip</h3>
+                    <p>Modern Punjabi fashion celebrating heritage through contemporary streetwear.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: info@punjabdrip.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Punjab Drip. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
